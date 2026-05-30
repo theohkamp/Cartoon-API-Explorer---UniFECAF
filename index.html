@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cartoon API Explorer: catálogo de personagens de desenhos animados para explorar imagens, histórias e detalhes."
+    />
+    <title>Cartoon API Explorer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho" id="topo">
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="logo" href="#inicio" aria-label="Ir para o início">
+          <span class="logo-marca" aria-hidden="true">C</span>
+          <span>Cartoon API Explorer</span>
+        </a>
+
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#personagens">Personagens</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="banner" id="inicio" aria-labelledby="titulo-principal">
+        <div class="banner-conteudo">
+          <p class="etiqueta">Personagens animados</p>
+          <h1 id="titulo-principal">Cartoon API Explorer</h1>
+          <p>
+            Explore personagens marcantes dos desenhos animados e relembre
+            histórias, imagens e detalhes de produções que atravessaram gerações.
+          </p>
+          <a class="botao botao-primario" href="#personagens">Explorar personagens</a>
+        </div>
+
+        <aside class="painel-destaque" aria-label="Temas em destaque">
+          <strong>Catálogo temático</strong>
+          <span>Animação</span>
+          <span>Nostalgia</span>
+          <span>Cultura pop</span>
+        </aside>
+      </section>
+
+      <section class="secao conteudo-texto" id="sobre" aria-labelledby="titulo-sobre">
+        <p class="etiqueta">Contexto</p>
+        <h2 id="titulo-sobre">Desenhos de sucesso dos anos 90 e 2000</h2>
+        <p>
+          Os desenhos animados marcaram a cultura pop de diferentes gerações.
+          Entre personagens carismáticos, famílias inesquecíveis e universos cheios
+          de humor, essas produções continuam presentes na memória de quem cresceu
+          acompanhando a televisão desse período.
+        </p>
+        <p>
+          Algumas descrições podem aparecer em espanhol porque são fornecidas por
+          fontes externas de dados.
+        </p>
+      </section>
+
+      <section class="secao" id="personagens" aria-labelledby="titulo-personagens">
+        <div class="cabecalho-secao">
+          <div>
+            <p class="etiqueta">Catálogo</p>
+            <h2 id="titulo-personagens">Personagens para explorar</h2>
+          </div>
+          <p class="fonte-api" id="fonteApi">Fonte dos dados: Os Simpsons</p>
+        </div>
+
+        <div class="controles" aria-label="Controles de busca e filtro">
+          <div class="campo-pesquisa">
+            <label for="campoBusca">Pesquisar por nome</label>
+            <div class="linha-pesquisa">
+              <input
+                type="search"
+                id="campoBusca"
+                placeholder="Digite o nome do personagem"
+                autocomplete="off"
+              />
+              <button class="botao botao-secundario" id="botaoLimpar" type="button">
+                Limpar
+              </button>
+            </div>
+          </div>
+
+          <div class="campo-filtro">
+            <label for="filtroExibicao">Filtro de exibição</label>
+            <select id="filtroExibicao">
+              <option value="todos">Todos os personagens</option>
+              <option value="favoritos">Somente favoritos</option>
+            </select>
+          </div>
+
+          <div class="campo-filtro">
+            <label for="filtroGenero">Gênero</label>
+            <select id="filtroGenero">
+              <option value="todos">Todos os gêneros</option>
+            </select>
+          </div>
+
+          <div class="campo-filtro">
+            <label for="filtroStatus">Status</label>
+            <select id="filtroStatus">
+              <option value="todos">Todos os status</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="status-lista" aria-live="polite">
+          <p id="contadorResultados">Nenhum personagem carregado ainda.</p>
+          <button class="botao botao-secundario oculto" id="botaoRecarregar" type="button">
+            Tentar novamente
+          </button>
+        </div>
+
+        <p class="mensagem carregamento oculto" id="mensagemCarregamento">
+          Carregando personagens...
+        </p>
+        <p class="mensagem erro oculto" id="mensagemErro"></p>
+        <p class="mensagem vazio oculto" id="mensagemVazio">
+          Nenhum personagem encontrado para os filtros selecionados.
+        </p>
+
+        <!-- Contêiner da lista de personagens. -->
+        <div class="grade-personagens" id="listaPersonagens" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <button class="voltar-topo" id="botaoTopo" type="button" aria-label="Voltar ao topo">
+      ↑
+    </button>
+
+    <footer class="rodape">
+      <p>Aluno(a): Christian Theodor Heisterkamp</p>
+      <p>Curso: Análise e Desenvolvimento de Sistemas</p>
+      <p>Disciplina: Web Programming Front-End</p>
+      <p>Instituição: UniFECAF</p>
+    </footer>
+  </body>
+</html>
